@@ -7,6 +7,6 @@ include_directories(.)
 
 add_executable(sym_tasker
         header.h
-        help.cpp
+        functions/help.cpp
         main.cpp
-        version.cpp asciiArtedName.cpp)
+        functions/version.cpp functions/asciiArtedName.cpp)
