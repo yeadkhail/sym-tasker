@@ -9,4 +9,4 @@ add_executable(sym_tasker
         header.h
         help.cpp
         main.cpp
-        version.cpp)
+        version.cpp asciiArtedName.cpp)
