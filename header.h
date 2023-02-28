@@ -4,5 +4,5 @@
 void help();
 void version();
 void asciiArtedName();
-
+int randomizer();
 #endif //_HEADER_H

@@ -2,7 +2,7 @@
 #include<iostream>
 #include<time.h>
 using namespace std;
-int main()
+int randomizer()
 {
     while(1)
     {

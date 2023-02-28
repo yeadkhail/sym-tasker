@@ -15,6 +15,11 @@ int main(int argc, char *argv[])
         else if(strcmp(argv[1],"--version") == 0) {
             version();
         }
+        else if(strcmp(argv[1],"--randomizer")==0)
+        {
+            randomizer();
+        }
+
     }
     return 0;
 }
