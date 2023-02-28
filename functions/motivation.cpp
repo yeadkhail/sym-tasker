@@ -19,7 +19,7 @@ int main()
     quotes[10]="I am always ready to learn although I do not always like being taught.";
 
     srand(time(NULL));
-    seed=rand();
+   int seed=rand();
     int index=seed%11;
     cout<<quotes[index];
     return 0;
