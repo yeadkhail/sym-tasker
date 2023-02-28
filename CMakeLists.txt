@@ -9,4 +9,4 @@ add_executable(sym
         header.h
         functions/help.cpp
         main.cpp
-        functions/version.cpp functions/asciiArtedName.cpp)
+        functions/version.cpp functions/asciiArtedName.cpp functions/dotSymFileChecker.cpp)
