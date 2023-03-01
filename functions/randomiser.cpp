@@ -3,7 +3,7 @@
 #include<cstdlib>
 #include<vector>
 using namespace std;
-int main()
+void randomizer()
 {
 
     string question;
@@ -18,6 +18,7 @@ int main()
     {
         while(1)
         {
+            cout<< question << endl;
             srand(time(NULL));
             seed=rand();
             if(seed%2)
