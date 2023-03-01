@@ -50,8 +50,8 @@ void randomizer()
     else
     {
 
-        cin.clear();
-        cin.sync();
+//        cin.clear();
+//        cin.sync();
         string ans1,ans2;
         cout<<"Input your first answer"<<endl;
         getline(cin,ans1);

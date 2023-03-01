@@ -6,4 +6,6 @@ void version();
 void asciiArtedName();
 bool dotSymFileChecker();
 void randomizer();
+void initializer();
+
 #endif //_HEADER_H
