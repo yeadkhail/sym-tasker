@@ -1,22 +1,22 @@
-#include<vector>
-#include<cstdlib>
 #include<iostream>
 #include<time.h>
+#include<cstdlib>
+#include<vector>
 using namespace std;
-int randomizer()
+int main()
 {
-    while(1)
+
+    string question;
+    string ans;
+    int seed;
+    cout<<"Enter Your Question:";
+    getline(cin,question);
+    cout<<"Press 'd' for default answers or press any key for your own answers:"<<endl;
+    cin>>ans;
+
+    if (ans[0]=='d' && ans[1]=='\0')
     {
-        cin.clear();
-        cin.sync();
-        string question;
-        string ans;
-        int seed;
-        cout<<"Enter Your Question:";
-        getline(cin,question);
-        cout<<"Press 'd' for default answers or press any key for your own answers:"<<endl;
-        cin>>ans;
-        if (ans[0]=='d' && ans[1]=='\0')
+        while(1)
         {
             srand(time(NULL));
             seed=rand();
@@ -45,15 +45,19 @@ int randomizer()
                 break;
             }
         }
-        else
+    }
+    else
+    {
+
+        cin.clear();
+        cin.sync();
+        string ans1,ans2;
+        cout<<"Input your first answer"<<endl;
+        getline(cin,ans1);
+        cout<<"Input your second answer"<<endl;
+        getline(cin,ans2);
+        while(1)
         {
-            cin.clear();
-            cin.sync();
-            string ans1,ans2;
-            cout<<"Input your first answer"<<endl;
-            getline(cin,ans1);
-            cout<<"Input your second answer"<<endl;
-            getline(cin,ans2);
             srand(time(NULL));
             seed=rand();
             if(seed%2)
@@ -80,6 +84,7 @@ int randomizer()
                 cout<<"Wrong input"<<endl;
                 break;
             }
+
         }
     }
 }

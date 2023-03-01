@@ -3,7 +3,7 @@
 #include<cstdlib>
 #include<vector>
 using namespace std;
-int main()
+int motivation()
 {
     string quotes[11];
     quotes[0]="\"A goal is a dream with a deadline.\" -Napoleon Hill";
