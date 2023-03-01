@@ -20,8 +20,6 @@ int main(int argc, char *argv[])
             initializer();
             goto jump;
         }
-
-
     }
     else if(argc==2) {
         if (strcmp(argv[1], "--help") == 0) {
@@ -34,7 +32,6 @@ int main(int argc, char *argv[])
         {
             randomizer();
         }
-
     }
     return 0;
 }
