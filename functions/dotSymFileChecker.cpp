@@ -9,11 +9,11 @@
 bool dotSymFileChecker()
 {
     using namespace std;
-    char *homedir = getenv("HOME");
-    const char *dotSym = "/.sym";
-    strcat(homedir,dotSym);
+    string homedir = getenv("HOME");
+    string dotSym = "/.sym";
+    //strcat(homedir,dotSym);
     ifstream checker;
-    checker.open(homedir);
+    checker.open(homedir + dotSym);
     if(!checker)
     {
         return false;
