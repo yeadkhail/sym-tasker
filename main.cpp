@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     using namespace std;
-    if(argc==1) {
+    if(argc == 1) {
         jump:
         asciiArtedName();
         if(dotSymFileChecker())
