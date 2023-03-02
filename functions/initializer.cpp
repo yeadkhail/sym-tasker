@@ -39,10 +39,12 @@ int initializer()
     dotsym <<"Phone Number: " << phone_number << endl;
     dotsym << "Email: " << email << endl;
     dotsym << "Address: "<< address << endl;
-    dotsym << "\n\n\n***\n";
+    dotsym << "$$Details$$"<<endl;
+    dotsym << "\n\n\n\n";
     dotsym << "``tags``"<<endl;
-    dotsym << "\n\n\n***\n";
-    dotsym << "``input``\n\n\n***\n";
+    dotsym << "$$tags$$"<<endl;
+    dotsym << "\n\n\n\n";
+    dotsym << "``input``\n\n\n\n";
     dotsym.close();
     return 0;
 }
