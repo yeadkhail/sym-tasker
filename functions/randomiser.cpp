@@ -1,7 +1,6 @@
 #include<iostream>
-#include<time.h>
+#include<ctime>
 #include<cstdlib>
-#include<vector>
 using namespace std;
 void randomizer()
 {
@@ -16,10 +15,10 @@ void randomizer()
 
     if (ans[0]=='d' && ans[1]=='\0')
     {
-        while(1)
+        while(true)
         {
             cout<< question << endl;
-            srand(time(NULL));
+            srand(time(nullptr));
             seed=rand();
             if(seed%2)
             {
@@ -57,9 +56,9 @@ void randomizer()
         getline(cin,ans1);
         cout<<"Input your second answer"<<endl;
         getline(cin,ans2);
-        while(1)
+        while(true)
         {
-            srand(time(NULL));
+            srand(time(nullptr));
             seed=rand();
             if(seed%2)
             {
