@@ -13,7 +13,7 @@ int initializer()
     string homeDir = getenv("HOME");
     string Sym = "/.sym";
     //strcat(homeDir,Sym);
-    cout << homeDir << endl;
+    //cout << homeDir << endl;
     dotsym.open(homeDir+Sym);
     if(!dotsym)
     {
