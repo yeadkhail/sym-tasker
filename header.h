@@ -1,6 +1,6 @@
 #ifndef SYM_HEADER_H
 #define SYM_HEADER_H
-
+#include"functions/input.h"
 void help();
 void version();
 void asciiArtedName();

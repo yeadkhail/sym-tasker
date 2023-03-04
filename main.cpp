@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include"header.h"
+
 #include <cstring>
 int main(int argc, char *argv[])
 {
@@ -10,7 +11,6 @@ int main(int argc, char *argv[])
         asciiArtedName();
         if(dotSymFileChecker())
         {
-
             cout << endl;
         }
         else
