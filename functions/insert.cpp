@@ -6,5 +6,14 @@
 
 void inset(void)
 {
+    ofstream dotsym;
+    string homeDir = getenv("HOME");
+    string Sym = "/.sym";
+    dotsym.open(homeDir+Sym);
+    if(!dotsym)
+    {
+        cout << "Error in creating .sym file" << endl << "Exiting the program"<<endl;
+        exit(1);
+    }
 
 }

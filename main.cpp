@@ -7,18 +7,30 @@ int main(int argc, char *argv[])
 {
     using namespace std;
     if(argc == 1) {
-        jump:
+begin:
         asciiArtedName();
         if(dotSymFileChecker())
         {
             cout << endl;
+start:
+            string input;
+            cout << "Enter your command >> ";
+            cin >> input;
+            if(input != "exit" )
+            {
+                goto start;
+            }
+            else
+            {
+
+            }
         }
         else
         {
             cout << "\n\n\nNo .sym file found in the home directory";
             cout<< "\nInitializing for the first time\n";
             initializer();
-            goto jump;
+            goto begin;
         }
     }
     else if(argc==2) {
