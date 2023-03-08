@@ -7,5 +7,6 @@ void asciiArtedName();
 bool dotSymFileChecker();
 void randomizer();
 void initializer();
+void insert(void);
 
 #endif //_HEADER_H
