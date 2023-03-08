@@ -44,7 +44,7 @@ int initializer()
     dotsym << "``tags``"<<endl;
     dotsym << "$$tags$$"<<endl;
     dotsym << "\n\n\n\n";
-    dotsym << "``input``\n\n\n\n";
+    dotsym << "``input``\n";
     dotsym.close();
     return 0;
 }
