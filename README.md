@@ -10,3 +10,6 @@ A cli based task listing and management application where task will be shown in 
 * Then copy the binary in /usr/bin/ 
 * make it executable.
 * Now use the application by writing sym in terminal.
+
+## Getting help
+Write `sym --help` in terminal to see the available commands.
