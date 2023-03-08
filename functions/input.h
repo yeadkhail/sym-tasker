@@ -12,6 +12,7 @@
 
 using namespace std;
 struct input {
+public:
     std::string taskname;
     std::string taskdetail;
     std::string tasktag;
@@ -46,6 +47,6 @@ struct input {
     }
 
 };
-
+input insertaskdata();
 
 #endif //SYM_INPUT_H

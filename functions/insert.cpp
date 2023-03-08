@@ -15,5 +15,8 @@ void inset(void)
         cout << "Error in creating .sym file" << endl << "Exiting the program"<<endl;
         exit(1);
     }
+    input taskdata;
+    taskdata = insertaskdata();
+
 
 }
