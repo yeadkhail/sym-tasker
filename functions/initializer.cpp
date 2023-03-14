@@ -13,7 +13,7 @@ int initializer()
     string homeDir = getenv("HOME");
     string Sym = "/.sym";
     //strcat(homeDir,Sym);
-    cout << homeDir << endl;
+    //cout << homeDir << endl;
     dotsym.open(homeDir+Sym);
     if(!dotsym)
     {
@@ -44,7 +44,7 @@ int initializer()
     dotsym << "``tags``"<<endl;
     dotsym << "$$tags$$"<<endl;
     dotsym << "\n\n\n\n";
-    dotsym << "``input``\n\n\n\n";
+    dotsym << "``input``\n";
     dotsym.close();
     return 0;
 }
