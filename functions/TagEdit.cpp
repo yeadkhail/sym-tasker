@@ -2,8 +2,10 @@
 
 using namespace std;
 
-void TagEdit(void)
+int TagEdit(void)
 {
+    string homeDir = getenv("HOME");
+    string Sym = "/.sym";
     string ReplacementText;
     string ReplacedText;
     ifstream fin;
@@ -16,12 +18,12 @@ void TagEdit(void)
     getline(cin, ReplacedText);
     cout << "What do you want to replace it with" << endl;
     getline(cin, ReplacementText);
-    cout << "Do you want to change it's importance?" << endl;
+    cout << "Do you want to change it's importance?(y\\n)" << endl;
     cin >> ImpIn;
     if(ImpIn == 'y')
         countImp = 1;
 
-    fin.open("tagedittest.txt");
+    fin.open(homeDir+Sym);
     if (!fin)
     {
         cout << "Error while opening file" << endl;
