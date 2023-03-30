@@ -89,7 +89,7 @@ int TagEdit(void)
     ifstream finTemp;
     ofstream foutMain;
     finTemp.open("&&&temp&&&.txt");
-    foutMain.open("tagedittest.txt");
+    foutMain.open(.homeDir+Sym);
     if (!finTemp)
     {
         cout << "Error while opening file" << endl;
