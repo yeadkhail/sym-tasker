@@ -8,5 +8,6 @@ bool dotSymFileChecker();
 void randomizer();
 void initializer();
 void insert(void);
+int TagEdit(void);
 
 #endif //_HEADER_H

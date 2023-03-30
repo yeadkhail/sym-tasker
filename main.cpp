@@ -23,7 +23,10 @@ start:
             else if(input == "help") help();
             else if(input == "version") version();
             else if(input == "randomizer") randomizer();
+            //else if(input == "insertag") insertag();
+            else if(input == "edittag") TagEdit();
             else if(input == "exit") exit(0);
+            else if(input == "clear") system("clear");  //system("cls");
             else cout << "Invalid command" << endl;
             if(input != "exit" )
             {
