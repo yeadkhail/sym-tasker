@@ -15,9 +15,9 @@ int TagEdit(void)
     int countImp = 0;
 
     cout << "What tag do you want to edit?" << endl;
-    getline(cin, ReplacedText);
+    cin >> ReplacedText;
     cout << "What do you want to replace it with" << endl;
-    getline(cin, ReplacementText);
+    cin >> ReplacementText;
     cout << "Do you want to change it's importance?(y\\n)" << endl;
     cin >> ImpIn;
     if(ImpIn == 'y')
@@ -89,7 +89,7 @@ int TagEdit(void)
     ifstream finTemp;
     ofstream foutMain;
     finTemp.open("&&&temp&&&.txt");
-    foutMain.open("tagedittest.txt");
+    foutMain.open(homeDir+Sym);
     if (!finTemp)
     {
         cout << "Error while opening file" << endl;
