@@ -35,7 +35,7 @@ start:
         }
         else
         {
-            cout << "\n\n\nNo .sym file found in the home directory";
+            cout << "\n\n\nNo .sym folder found in the home directory";
             cout<< "\nInitializing for the first time\n";
             initializer();
             goto begin;

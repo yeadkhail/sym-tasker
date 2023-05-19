@@ -9,5 +9,7 @@ void randomizer();
 void initializer();
 void insert(void);
 int TagEdit(void);
-
+string dotsymfilestring();
+bool copyFile(const string& sourceFilePath, const string& destinationFolderPath);
+string attachmentfolderpathstring();
 #endif //_HEADER_H

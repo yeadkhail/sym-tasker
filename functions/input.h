@@ -17,6 +17,7 @@ public:
     std::string taskdetail;
     std::string tasktag;
     std::string date;
+    std::string attachment;
 
     static int showdatedate(const std::string& date)
     {
