@@ -5,13 +5,40 @@
 #include <fstream>
 #include <cstdlib>
 #include<cstring>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 int initializer()
 {
     using namespace std;
+
     ofstream dotsym;
-    string homeDir = getenv("HOME");
-    string Sym = "/.sym";
+    char *homeDir = getenv("HOME");
+
+    // Check if the homeDir is not null
+    if (homeDir == nullptr) {
+        cout << "Error retrieving home directory." << endl;
+        return 1;
+    }
+
+    // Create a copy of homeDir
+    char folderPath[256];
+    strcpy(folderPath, homeDir);
+
+    strcat(folderPath, "/.sym");
+    int status = mkdir(folderPath, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+    if (status != 0) {
+        cout << "Error creating .sym folder." << endl;
+    }
+
+    strcat(folderPath, "/Attachments");
+    cout << folderPath << endl;
+    status = mkdir(folderPath, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+    if (status != 0) {
+        cout << "Error creating attachment folder." << endl;
+    }
+
+    string Sym = "/.sym/.sym";
     //strcat(homeDir,Sym);
     //cout << homeDir << endl;
     dotsym.open(homeDir+Sym);
@@ -33,7 +60,10 @@ int initializer()
     getline(cin, address);
     //cout<< name << " " << phone_number << " " << address << endl;
     cout << "Hello " << name << "!"<< endl;
+    system("sleep 2");
     cout<< "We are now going to initialize your profile!" <<endl;
+    system("sleep 2");
+    system("clear");
     dotsym <<"``Detais``"<<endl;
     dotsym <<"Name: "<<name<<endl;
     dotsym <<"Phone Number: " << phone_number << endl;
