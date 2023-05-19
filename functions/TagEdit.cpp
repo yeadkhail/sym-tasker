@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "header.h"
 
 using namespace std;
 
@@ -6,6 +7,7 @@ int TagEdit(void)
 {
     string homeDir = getenv("HOME");
     string Sym = "/.sym";
+    string homeDirSym = dotsymfilestring();
     string ReplacementText;
     string ReplacedText;
     ifstream fin;
@@ -23,7 +25,7 @@ int TagEdit(void)
     if(ImpIn == 'y')
         countImp = 1;
 
-    fin.open(homeDir+Sym);
+    fin.open(homeDirSym);
     if (!fin)
     {
         cout << "Error while opening file" << endl;
