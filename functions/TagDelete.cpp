@@ -12,7 +12,7 @@ void TagDelete(void)
 
     cout << "What tag do you want to delete?" << endl;
     getline(cin, tag);
-    fin.open("tagedittest.txt");
+    fin.open("tagdeletetest.txt");
     if (!fin)
     {
         cout << "Error while opening file" << endl;
@@ -60,7 +60,7 @@ void TagDelete(void)
     ifstream finTemp;
     ofstream foutMain;
     finTemp.open("&&&temp&&&.txt");
-    foutMain.open("tagedittest.txt");
+    foutMain.open("tagdeletetest.txt");
     if (!finTemp)
     {
         cout << "Error while opening file" << endl;
