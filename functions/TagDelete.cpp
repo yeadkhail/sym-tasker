@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
+#include "header.h"
 
 using namespace std;
 
-void TagDelete(void)
+int TagDelete(void)
 {
+    string filename = dotsymfilestring();
     string tag;
     ifstream fin;
     ofstream foutTemp;
@@ -12,7 +14,7 @@ void TagDelete(void)
 
     cout << "What tag do you want to delete?" << endl;
     getline(cin, tag);
-    fin.open("tagdeletetest.txt");
+    fin.open("filename");
     if (!fin)
     {
         cout << "Error while opening file" << endl;
@@ -33,7 +35,7 @@ void TagDelete(void)
         if(count)
         {
             istringstream iss(input);
-            while(getline(iss,part,'.')){
+            while(getline(iss,part,'^')){
                 if(part == tag){
                     count2++;
                     break;
@@ -60,7 +62,7 @@ void TagDelete(void)
     ifstream finTemp;
     ofstream foutMain;
     finTemp.open("&&&temp&&&.txt");
-    foutMain.open("tagdeletetest.txt");
+    foutMain.open("filename");
     if (!finTemp)
     {
         cout << "Error while opening file" << endl;
