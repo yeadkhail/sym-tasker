@@ -1,26 +1,56 @@
-//
-// Created by yead on 3/4/23.
-//
-
-#include<functions/input.h>
+#include <functions/input.h>
 #include "header.h"
+
+using namespace std;
 
 void insert(void)
 {
-    ofstream dotsym;
     string filename = dotsymfilestring();
-    dotsym.open(filename,ios::app);
-    if(!dotsym)
+    ifstream read;
+    read.open(filename);
+    if (!read)
     {
-        cout << "Error in creating .sym file" << endl << "Exiting the program"<<endl;
+        cout << "Error while opening file" << endl;
         exit(1);
     }
-    getc(stdin);
+    int num1,num2,i=0;
+    vector<string> lines;
+    string line;
+    while(getline(read, line)){
+        lines.push_back(line);
+        i++;
+        if(line == "``tags``"){
+            num2 = i;
+        }
+        if(line == "``tasks``"){
+            num1 = i;
+        }
+    }
+    read.close();
+    char c[1000];
+    itoa((num2 - num1 - 1), c, 10);
+
     input taskdata;
     taskdata = insertaskdata();
-    // here line number needs to be included (has to implement afterwards).
-    dotsym << "^^"<<taskdata.taskname<<"^^"<<taskdata.taskdetail<<"^^"<<taskdata.tasktag<<"^^"<<taskdata.date<<"^^"
-            <<taskdata.attachment<<"^^"<<endl;
-    dotsym.close();
+
+    string tname = taskdata.name;
+    string tdetail = taskdata.taskdetail;
+    string ttag = taskdata.tasktag;
+    string tdate = taskdata.date;
+    string dot = "^^";
+    string insert = c + dot + tname + dot + tdetail + dot + ttag + dot + tdate;
+    lines.insert(lines.begin() + (num2-2), insert);
+    cout << c << endl;
+    ofstream outputFile(filename);
+    if (!outputFile){
+        cout << "Error creating file: " << filename << endl;
+        return 0;
+    }
+
+    for (const string& outputLine : lines) {
+        outputFile << outputLine << endl;
+    }
+    outputFile.close();
+
 
 }
