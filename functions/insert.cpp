@@ -52,5 +52,4 @@ void insert(void)
     }
     outputFile.close();
 
-
 }
