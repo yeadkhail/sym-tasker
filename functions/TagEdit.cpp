@@ -5,6 +5,9 @@ using namespace std;
 
 int TagEdit(void)
 {
+    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+    char *line = NULL;
+    size_t len = 0;
     string ReplacementText;
     string ReplacedText;
     ifstream fin;

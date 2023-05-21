@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "header.h"
 using namespace std;
 string getFileName(const string& filePath) {
     size_t lastSeparatorPos = filePath.find_last_of("/\\");

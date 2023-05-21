@@ -15,7 +15,8 @@ void TagWise(void)
         cout << "Failed to open file" << endl;
     }
     cout << "What tag do you want to search?" << endl;
-    getline(cin, tag);
+    cin >> tag;
+    cout << tag<< endl;
     vector<string> lines;
     string line;
     while(getline(read, line))
