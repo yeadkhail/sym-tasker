@@ -1,11 +1,12 @@
 #include <functions/input.h>
+#include <vector>
 #include "header.h"
 
 using namespace std;
 
-void insert(void)
+int insert(void)
 {
-    string filename = dotsymfilestring();
+    string filename = (string)dotsymfilestring();
     ifstream read;
     read.open(filename);
     if (!read)
@@ -28,12 +29,13 @@ void insert(void)
     }
     read.close();
     char c[1000];
-    itoa((num2 - num1 - 1), c, 10);
+    int number = num2 - num1 - 1;
+    snprintf(c, sizeof(c), "%d", number);
 
     input taskdata;
     taskdata = insertaskdata();
 
-    string tname = taskdata.name;
+    string tname = taskdata.taskname;
     string tdetail = taskdata.taskdetail;
     string ttag = taskdata.tasktag;
     string tdate = taskdata.date;
@@ -44,12 +46,12 @@ void insert(void)
     ofstream outputFile(filename);
     if (!outputFile){
         cout << "Error creating file: " << filename << endl;
-        return 0;
+        return 1;
     }
 
     for (const string& outputLine : lines) {
         outputFile << outputLine << endl;
     }
     outputFile.close();
-
+    return 0;
 }

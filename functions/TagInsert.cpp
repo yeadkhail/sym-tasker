@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#inlcude "header.h"
+#include "header.h"
 
 using namespace std;
 
@@ -34,7 +34,8 @@ int TagInsert(void){
     inputFile.close();
     cout << num2 - num1 << endl;
     char x[1000];
-    itoa((num2 - num1 - 1), x, 10);
+    int number = num2 - num1 - 1;
+    snprintf(x, sizeof(x), "%d", number);
     string insert = x + dot + tag + dot + imp;
     lines.insert(lines.begin() + (num2-2), insert);
     cout << x << endl;
