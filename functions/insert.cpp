@@ -1,12 +1,10 @@
-#include <functions/input.h>
-#include <vector>
+#include <bits/stdc++.h>
 #include "header.h"
 
 using namespace std;
 
 int insert(void)
 {
-
     string filename = dotsymfilestring();
     ifstream read;
     read.open(filename);
@@ -29,9 +27,9 @@ int insert(void)
         }
     }
     read.close();
+
     char c[1000];
-    int number = num2 - num1 - 1;
-    snprintf(c, sizeof(c), "%d", number);
+    snprintf(c, sizeof(c), "%d", (num2 - num1 - 1));
 
     input taskdata;
     taskdata = insertaskdata();
@@ -43,16 +41,19 @@ int insert(void)
     string dot = "^^";
     string insert = c + dot + tname + dot + tdetail + dot + ttag + dot + tdate;
     lines.insert(lines.begin() + (num2-2), insert);
-    cout << c << endl;
     ofstream outputFile(filename);
     if (!outputFile){
         cout << "Error creating file: " << filename << endl;
-        return 1;
+        return 0;
     }
 
     for (const string& outputLine : lines) {
         outputFile << outputLine << endl;
     }
     outputFile.close();
-    return 0;
+    insert = dot + tname + dot + tdetail + dot + ttag + dot + tdate;
+    ofstream app(filename, ios::app);
+    app << insert << endl;
+    app.close();
+
 }
