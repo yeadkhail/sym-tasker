@@ -51,7 +51,7 @@ int insert(void)
         outputFile << outputLine << endl;
     }
     outputFile.close();
-
+    insert = dot + tname + dot + tdetail + dot + ttag + dot + tdate;
     ofstream app(filename, ios::app);
     app << insert << endl;
     app.close();
