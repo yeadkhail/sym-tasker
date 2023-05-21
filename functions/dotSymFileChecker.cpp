@@ -5,15 +5,15 @@
 #include<cstring>
 #include<cstdlib>
 #include <fstream>
-#include "header.h"
 
 bool dotSymFileChecker()
 {
     using namespace std;
-    string homedir = dotsymfilestring();
+    string homedir = getenv("HOME");
+    string dotSym = "/.sym";
     //strcat(homedir,dotSym);
     ifstream checker;
-    checker.open(homedir);
+    checker.open(homedir + dotSym);
     if(!checker)
     {
         return false;

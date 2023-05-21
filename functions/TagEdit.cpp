@@ -5,27 +5,24 @@ using namespace std;
 
 int TagEdit(void)
 {
-    string homeDir = getenv("HOME");
-    string Sym = "/.sym";
-    string homeDirSym = dotsymfilestring();
     string ReplacementText;
     string ReplacedText;
     ifstream fin;
     ofstream foutTemp;
+    string filename = dotsymfilestring();
     int count = 0, changed = 0;
     char ImpIn;
     int countImp = 0;
 
     cout << "What tag do you want to edit?" << endl;
-    cin >> ReplacedText;
+    getline(cin, ReplacedText);
     cout << "What do you want to replace it with" << endl;
-    cin >> ReplacementText;
-    cout << "Do you want to change it's importance?(y\\n)" << endl;
+    getline(cin, ReplacementText);
+    cout << "Do you want to change it's importance?" << endl;
     cin >> ImpIn;
     if(ImpIn == 'y')
         countImp = 1;
-
-    fin.open(homeDirSym);
+    fin.open("filename");
     if (!fin)
     {
         cout << "Error while opening file" << endl;
@@ -49,7 +46,7 @@ int TagEdit(void)
         if(count)
         {
             istringstream iss(input);
-            while(getline(iss,part,'.')){
+            while(getline(iss,part,'^')){
                 if(part == ReplacedText){
                     part = ReplacementText;
                     count3++, count2++;
@@ -91,7 +88,7 @@ int TagEdit(void)
     ifstream finTemp;
     ofstream foutMain;
     finTemp.open("&&&temp&&&.txt");
-    foutMain.open(homeDir+Sym);
+    foutMain.open("filename");
     if (!finTemp)
     {
         cout << "Error while opening file" << endl;
