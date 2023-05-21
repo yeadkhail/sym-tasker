@@ -4,11 +4,14 @@
 using namespace std;
 
 int TagInsert(void){
+    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+    char *line1 = NULL;
+    size_t len = 0;
     string filename = dotsymfilestring();
     string tag, imp;
     cout << "What tag do you want to insert?" << endl;
     getline(cin, tag);
-    cout << "What shall be the importance? (1 for high and 0 for low)" << endl;
+    cout << "What shall be the importance? (1 for Important and 0 for Not important)" << endl;
     getline(cin, imp);
     string dot = "^^";
     int i=0,num1,num2;
