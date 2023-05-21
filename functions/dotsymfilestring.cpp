@@ -9,6 +9,6 @@ string dotsymfilestring()
     string homeDir = getenv("HOME");
     string Sym = "/.sym/.sym";
     string path = homeDir+Sym;
-    cout<<path<<endl;
+    //cout<<path<<endl;
     return path;
 }

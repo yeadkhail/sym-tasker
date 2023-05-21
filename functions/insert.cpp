@@ -6,7 +6,8 @@ using namespace std;
 
 int insert(void)
 {
-    string filename = (string)dotsymfilestring();
+
+    string filename = dotsymfilestring();
     ifstream read;
     read.open(filename);
     if (!read)

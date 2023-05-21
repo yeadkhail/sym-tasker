@@ -16,5 +16,5 @@ void TagWise(void);
 int TagInsert(void);
 int TagDelete(void);
 input taskfromstring(string stringdata);
-
+string getFileName(const string& filePath);
 #endif //_HEADER_H
