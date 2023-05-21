@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#inlcude "header.h"
+#include "header.h"
 
 using namespace std;
 
@@ -13,9 +13,9 @@ int TagInsert(void){
     string dot = "^^";
     int i=0,num1,num2;
     string InsertedTag, Imp, input, part;
-    ifstream inputFile("filename");
+    ifstream inputFile(filename);
     if (!inputFile) {
-        cout << "Error opening file: " << "filename" << endl;
+        cout << "Error opening file: " << filename << endl;
         return 0;
     }
 
@@ -34,13 +34,14 @@ int TagInsert(void){
     inputFile.close();
     cout << num2 - num1 << endl;
     char x[1000];
-    itoa((num2 - num1 - 1), x, 10);
+    int number = num2 - num1 - 1;
+    snprintf(x, sizeof(x), "%d", number);
     string insert = x + dot + tag + dot + imp;
     lines.insert(lines.begin() + (num2-2), insert);
     cout << x << endl;
-    ofstream outputFile("filename");
+    ofstream outputFile(filename);
     if (!outputFile){
-        cout << "Error creating file: " << "filename" << endl;
+        cout << "Error creating file: " << filename << endl;
         return 0;
     }
 

@@ -22,7 +22,7 @@ int TagEdit(void)
     cin >> ImpIn;
     if(ImpIn == 'y')
         countImp = 1;
-    fin.open("filename");
+    fin.open(filename);
     if (!fin)
     {
         cout << "Error while opening file" << endl;

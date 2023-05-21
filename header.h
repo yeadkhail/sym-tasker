@@ -7,9 +7,14 @@ void asciiArtedName();
 bool dotSymFileChecker();
 void randomizer();
 void initializer();
-void insert(void);
+int insert(void);
 int TagEdit(void);
 string dotsymfilestring();
 bool copyFile(const string& sourceFilePath, const string& destinationFolderPath);
 string attachmentfolderpathstring();
+void TagWise(void);
+int TagInsert(void);
+int TagDelete(void);
+input taskfromstring(string stringdata);
+
 #endif //_HEADER_H
