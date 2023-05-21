@@ -26,7 +26,7 @@ start:
             //else if(input == "insertag") inserttag();
             else if(input == "edit-tag") TagEdit();
             else if(input =="delete-tag") TagDelete();
-            else if(input == "inset-tag") TagInsert();
+            else if(input == "insert-tag") TagInsert();
             else if(input == "show-tagwise") TagWise();
             else if(input == "exit") exit(0);
             else if(input == "clear") system("clear");  //system("cls");

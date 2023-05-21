@@ -13,9 +13,9 @@ int TagInsert(void){
     string dot = "^^";
     int i=0,num1,num2;
     string InsertedTag, Imp, input, part;
-    ifstream inputFile("filename");
+    ifstream inputFile(filename);
     if (!inputFile) {
-        cout << "Error opening file: " << "filename" << endl;
+        cout << "Error opening file: " << filename << endl;
         return 0;
     }
 
@@ -39,9 +39,9 @@ int TagInsert(void){
     string insert = x + dot + tag + dot + imp;
     lines.insert(lines.begin() + (num2-2), insert);
     cout << x << endl;
-    ofstream outputFile("filename");
+    ofstream outputFile(filename);
     if (!outputFile){
-        cout << "Error creating file: " << "filename" << endl;
+        cout << "Error creating file: " << filename << endl;
         return 0;
     }
 
