@@ -22,7 +22,6 @@ int TagEdit(void)
     cin >> ImpIn;
     if(ImpIn == 'y')
         countImp = 1;
-
     fin.open("filename");
     if (!fin)
     {
