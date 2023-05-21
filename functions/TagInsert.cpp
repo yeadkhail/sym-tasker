@@ -35,13 +35,11 @@ int TagInsert(void){
         }
     }
     inputFile.close();
-    cout << num2 - num1 << endl;
     char x[1000];
     int number = num2 - num1 - 1;
     snprintf(x, sizeof(x), "%d", number);
     string insert = x + dot + tag + dot + imp;
     lines.insert(lines.begin() + (num2-2), insert);
-    cout << x << endl;
     ofstream outputFile(filename);
     if (!outputFile){
         cout << "Error creating file: " << filename << endl;
