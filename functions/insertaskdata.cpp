@@ -36,7 +36,7 @@ input insertaskdata()
         cin >> attachment;
         copyFile(attachment,attachmentfolderpathstring());
         string destinationFilePath = attachmentfolderpathstring() + getFileName(attachment);
-        cout << "hello" << endl;
+        //cout << "hello" << endl;
         taskdata.attachment = destinationFilePath;
         cout<< taskdata.attachment;
     }
