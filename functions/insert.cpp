@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main(void)
+int insert(void)
 {
     string filename = dotsymfilestring();
     ifstream read;
@@ -29,7 +29,7 @@ int main(void)
     read.close();
 
     char c[1000];
-    itoa((num2 - num1 - 1), c, 10);
+    snprintf(c, sizeof(c), "%d", (num2 - num1 - 1));
 
     input taskdata;
     taskdata = insertaskdata();
