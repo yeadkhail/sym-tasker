@@ -39,7 +39,7 @@ int insert(void)
     string ttag = taskdata.tasktag;
     string tdate = taskdata.date;
     string dot = "^^";
-    string insert = c + dot + tname + dot + tdetail + dot + ttag + dot + tdate;
+    string insert = c + dot + tname + dot + tdetail + dot + ttag + dot + tdate + dot + taskdata.attachment;
     lines.insert(lines.begin() + (num2-2), insert);
     ofstream outputFile(filename);
     if (!outputFile){
@@ -51,9 +51,9 @@ int insert(void)
         outputFile << outputLine << endl;
     }
     outputFile.close();
-    insert = dot + tname + dot + tdetail + dot + ttag + dot + tdate;
+    insert = dot + tname + dot + tdetail + dot + ttag + dot + tdate + dot + taskdata.attachment;
     ofstream app(filename, ios::app);
     app << insert << endl;
     app.close();
-
+    return 0;
 }

@@ -71,9 +71,11 @@ int initializer()
     dotsym << "Address: "<< address << endl;
     //dotsym << "$$Details$$"<<endl;
     dotsym << "\n";
+    dotsym << "``tasks``"<<endl;
+    dotsym << "\n";
     dotsym << "``tags``"<<endl;
-    dotsym << "important^^1"<<endl;
-    dotsym << "not-important^^0"<<endl;
+    dotsym << "1^^important^^1"<<endl;
+    dotsym << "2^^not-important^^0"<<endl;
     //dotsym << "$$tags$$"<<endl;
     dotsym << "\n";
     dotsym << "``input``\n";

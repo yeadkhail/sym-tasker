@@ -1,90 +1,85 @@
-#include<iostream>
-#include<ctime>
-#include<cstdlib>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
 using namespace std;
 void randomizer()
 {
-
+    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+    char *line = NULL;
+    size_t len = 0;
     string question;
     string ans;
-    int seed;
-    cout<<"Enter Your Question:";
-    getline(cin,question);
-    cout<<"Press 'd' for default answers or press any key for your own answers:"<<endl;
-    cin>>ans;
 
-    if (ans[0]=='d' && ans[1]=='\0')
+    cout << "Enter Your Question: ";
+    getline(cin, question);
+
+    cout << "Press 'd' for default answers or press any key for your own answers: ";
+    cin >> ans;
+
+    if (ans == "d")
     {
-        while(true)
+        srand(time(NULL));
+        while (true)
         {
-            cout<< question << endl;
-            srand(time(nullptr));
-            seed=rand();
-            if(seed%2)
+            cout << question << endl;
+            if (rand() % 2)
             {
-                cout<<"YES"<<endl;
+                cout << "YES" << endl;
             }
             else
             {
-                cout<<"NO"<<endl;
+                cout << "NO" << endl;
             }
             char ch;
-            cout<<"Do you want to play again?y/n"<<endl;
-            cin>>ch;
-            if(ch=='y')
-            {
-                continue;
-            }
-            else if(ch=='n')
+            cout << "Do you want to play again? (y/n) ";
+            cin >> ch;
+            if (ch == 'n')
             {
                 break;
             }
-            else
+            else if (ch != 'y')
             {
-                cout<<"Wrong input"<<endl;
+                cout << "Wrong input" << endl;
                 break;
             }
         }
     }
     else
     {
+        cin.ignore();
+        string ans1, ans2;
 
-//        cin.clear();
-//        cin.sync();
-        string ans1,ans2;
-        cout<<"Input your first answer"<<endl;
-        getline(cin,ans1);
-        cout<<"Input your second answer"<<endl;
-        getline(cin,ans2);
-        while(true)
+        cout << "Input your first answer: ";
+        getline(cin, ans1);
+
+        cout << "Input your second answer: ";
+        getline(cin, ans2);
+
+        srand(time(NULL));
+        while (true)
         {
-            srand(time(nullptr));
-            seed=rand();
-            if(seed%2)
+            if (rand() % 2)
             {
-                cout<<ans1<<endl;
+                cout << ans1 << endl;
             }
             else
             {
-                cout<<ans2<<endl;
+                cout << ans2 << endl;
             }
             char ch;
-            cout<<"Do you want to play again?y/n"<<endl;
-            cin>>ch;
-            if(ch=='y')
-            {
-                continue;
-            }
-            else if(ch=='n')
+            cout << "Do you want to play again? (y/n) ";
+            cin >> ch;
+            if (ch == 'n')
             {
                 break;
             }
-            else
+            else if (ch != 'y')
             {
-                cout<<"Wrong input"<<endl;
+                cout << "Wrong input" << endl;
                 break;
             }
-
         }
     }
 }

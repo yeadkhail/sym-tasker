@@ -40,17 +40,19 @@ int TagDelete(void)
             istringstream iss(input);
             while(getline(iss,part,'^')){
                 if(part == tag){
+                    input = " ";
                     count2++;
+                    count = 0;
                     break;
 
                 }
             }
         }
-        if(count2){
+        /*if(count2){
             count2--;
             continue;
 
-        }
+        }*/
         foutTemp << input << endl;
         if(input == "``tags``")
         {

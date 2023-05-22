@@ -11,9 +11,9 @@ int TagInsert(void){
     string tag, imp;
     cout << "What tag do you want to insert?" << endl;
     getline(cin, tag);
-    cout << "What shall be the importance? (1 for high and 0 for low)" << endl;
+    cout << "What shall be the importance? (1 for Important and 0 for Not important)" << endl;
     getline(cin, imp);
-    string dot = "^^";
+    string dot = "^";
     int i=0,num1,num2;
     string InsertedTag, Imp, input, part;
     ifstream inputFile(filename);
@@ -51,7 +51,7 @@ int TagInsert(void){
     }
     outputFile.close();
 
-    cout << "Line inserted successfully!" << endl;
+    cout << "Tag inserted successfully!" << endl;
 
     return 0;
 }
