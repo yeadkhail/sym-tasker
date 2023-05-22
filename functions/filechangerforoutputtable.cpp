@@ -7,7 +7,8 @@
 
 int fileChangerForOutputTable()
 {
-    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+
+
     char *lad1 = NULL;
     size_t len = 0;
     std::string fileName1 = "d1.txt";
@@ -28,7 +29,7 @@ int fileChangerForOutputTable()
     int lineCount = 0;
 
     while (std::getline(file1, line)) {
-        if (lineCount == 10) {
+        if (lineCount == 9) {
 
             break;
         }
@@ -95,7 +96,7 @@ int fileChangerForOutputTable()
         lineCount = 0;
 
         while (std::getline(file2, line)) {
-            if (lineCount == 10) {
+            if (lineCount == 9) {
                 break;
             }
             int charCount = line.length();

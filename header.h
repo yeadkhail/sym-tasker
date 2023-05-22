@@ -23,6 +23,6 @@ int motivation();
 int fileChangerForOutputTable();
 int outputTable();
 void showTable();
-
+void TaskDelete(void);
 
 #endif //_HEADER_H
