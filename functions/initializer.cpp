@@ -32,7 +32,7 @@ int initializer()
     }
 
     strcat(folderPath, "/Attachments");
-    cout << folderPath << endl;
+    //cout << folderPath << endl;
     status = mkdir(folderPath, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
     if (status != 0) {
         cout << "Error creating attachment folder." << endl;
