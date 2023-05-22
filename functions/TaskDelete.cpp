@@ -3,20 +3,20 @@
 
 using namespace std;
 
-int TagDelete(void)
+void TaskDelete(void)
 {
     setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
     char *line = NULL;
     size_t len = 0;
     string filename = dotsymfilestring();
-    string tag;
+    string task;
     ifstream fin;
     ofstream foutTemp;
     int count = 0, changed = 0;
     int count2 = 0;
 
-    cout << "What tag do you want to delete?" << endl;
-    getline(cin, tag);
+    cout << "What task do you want to delete?" << endl;
+    getline(cin, task);
     fin.open(filename);
     if (!fin)
     {
@@ -39,7 +39,7 @@ int TagDelete(void)
         {
             istringstream iss(input);
             while(getline(iss,part,'^')){
-                if(part == tag){
+                if(part == task){
                     input = " ";
                     count2++;
                     count = 0;
@@ -54,7 +54,7 @@ int TagDelete(void)
 
         }*/
         foutTemp << input << endl;
-        if(input == "``tags``")
+        if(input == "``tasks``")
         {
             count = 1;
             continue;
@@ -91,5 +91,4 @@ int TagDelete(void)
     int result = remove("&&&temp&&&.txt");
 
 
-    return 0;
 }

@@ -53,7 +53,7 @@ int TagEdit(void)
                 if(part == ReplacedText){
                     part = ReplacementText;
                     count3++, count2++;
-                    foutTemp << part << '.';
+                    foutTemp << part << '^';
                     continue;
                 }
                 if(count3)
@@ -69,7 +69,7 @@ int TagEdit(void)
                 }
                 foutTemp << part;
                 if(count2<2)
-                    foutTemp << '.';
+                    foutTemp << '^';
                 count2++;
 
             }
@@ -91,7 +91,7 @@ int TagEdit(void)
     ifstream finTemp;
     ofstream foutMain;
     finTemp.open("&&&temp&&&.txt");
-    foutMain.open("filename");
+    foutMain.open(filename);
     if (!finTemp)
     {
         cout << "Error while opening file" << endl;
