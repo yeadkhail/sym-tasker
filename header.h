@@ -16,5 +16,13 @@ void TagWise(void);
 int TagInsert(void);
 int TagDelete(void);
 input taskfromstring(string stringdata);
+int outputTable();
+int fileChangerForOutputTable();
 string getFileName(const string& filePath);
+int motivation();
+int fileChangerForOutputTable();
+int outputTable();
+void showTable();
+
+
 #endif //_HEADER_H

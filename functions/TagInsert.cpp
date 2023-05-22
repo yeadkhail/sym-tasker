@@ -51,7 +51,7 @@ int TagInsert(void){
     }
     outputFile.close();
 
-    cout << "Line inserted successfully!" << endl;
+    cout << "Tag inserted successfully!" << endl;
 
     return 0;
 }
