@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "header.h"
 
+
 using namespace std;
 
 int TaskEdit(void)
@@ -30,9 +31,13 @@ int TaskEdit(void)
     }
 
     cout << "What task do you want to edit?" << endl;
-    cin >> ReplacedTask;
+    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+    //cin.ignore();
+    getline(cin, ReplacedTask);
     cout << "What do you want to replace it with" << endl;
-    cin >> ReplacementTask;
+    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+    //cin.ignore();
+    getline(cin, ReplacementTask);
     cout << "Do you want to edit the details of the task?(y/n)" << endl;
     cin >> DetAns;
     if(DetAns == 'y')
@@ -51,7 +56,7 @@ int TaskEdit(void)
         cout << "Input the new Task Tag:" << endl;
         setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
         cin.ignore();
-        cin >> ReplacementTag;
+        getline(cin, ReplacementTag);
     }
     cout << "Do you want to edit the date of the task" << endl;
     cin >> DateAns;
@@ -152,4 +157,6 @@ int TaskEdit(void)
 
     else
         cout << "Failed to find the tag" << endl;
+
+
 }
