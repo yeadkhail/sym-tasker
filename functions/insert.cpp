@@ -38,7 +38,7 @@ int insert(void)
     string tdetail = taskdata.taskdetail;
     string ttag = taskdata.tasktag;
     string tdate = taskdata.date;
-    string dot = "^^";
+    string dot = "^";
     string insert = c + dot + tname + dot + tdetail + dot + ttag + dot + tdate + dot + taskdata.attachment;
     lines.insert(lines.begin() + (num2-2), insert);
     ofstream outputFile(filename);
