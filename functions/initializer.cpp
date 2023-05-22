@@ -74,8 +74,8 @@ int initializer()
     dotsym << "``tasks``"<<endl;
     dotsym << "\n";
     dotsym << "``tags``"<<endl;
-    dotsym << "1^^important^^1"<<endl;
-    dotsym << "2^^not-important^^0"<<endl;
+    dotsym << "1^important^1"<<endl;
+    dotsym << "2^not-important^0"<<endl;
     //dotsym << "$$tags$$"<<endl;
     dotsym << "\n";
     dotsym << "``input``\n";
