@@ -32,7 +32,7 @@ int initializer()
     }
 
     strcat(folderPath, "/Attachments");
-    cout << folderPath << endl;
+    //cout << folderPath << endl;
     status = mkdir(folderPath, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
     if (status != 0) {
         cout << "Error creating attachment folder." << endl;
@@ -74,8 +74,8 @@ int initializer()
     dotsym << "``tasks``"<<endl;
     dotsym << "\n";
     dotsym << "``tags``"<<endl;
-    dotsym << "1^^important^^1"<<endl;
-    dotsym << "2^^not-important^^0"<<endl;
+    dotsym << "1^important^1"<<endl;
+    dotsym << "2^not-important^0"<<endl;
     //dotsym << "$$tags$$"<<endl;
     dotsym << "\n";
     dotsym << "``input``\n";

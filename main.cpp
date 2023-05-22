@@ -18,13 +18,12 @@ start:
             cout << "Enter your command >> ";
             cin >> input;
             if(input == "insert") insert();
-            //else if(input == "delete") deleteTask();
+            else if(input == "delete-task") TaskDelete();
             //else if(input == "update") updateTask();
             //else if(input == "show") showTask();
             else if(input == "help") help();
             else if(input == "version") version();
             else if(input == "randomizer") randomizer();
-            //else if(input == "insertag") inserttag();
             else if(input == "edit-tag") TagEdit();
             else if(input =="delete-tag") TagDelete();
             else if(input == "insert-tag") TagInsert();
