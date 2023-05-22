@@ -38,7 +38,7 @@ input insertaskdata()
         string destinationFilePath = attachmentfolderpathstring() + getFileName(attachment);
         //cout << "hello" << endl;
         taskdata.attachment = destinationFilePath;
-        cout<< taskdata.attachment;
+        //cout<< taskdata.attachment;
     }
     else
         taskdata.attachment = "NULL";
