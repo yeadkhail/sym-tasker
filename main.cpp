@@ -12,6 +12,7 @@ begin:
         if(dotSymFileChecker())
         {
             cout << endl;
+            showTable();
 start:
             string input;
             cout << "Enter your command >> ";
@@ -27,7 +28,7 @@ start:
             else if(input == "edit-tag") TagEdit();
             else if(input =="delete-tag") TagDelete();
             else if(input == "insert-tag") TagInsert();
-            else if(input == "show-tagwise") TagWise();
+            else if(input == "search-tagwise") TagWise();
             else if(input == "exit") exit(0);
             else if(input == "clear") system("clear");  //system("cls");
             else cout << "Invalid command" << endl;

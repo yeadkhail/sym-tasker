@@ -4,7 +4,7 @@
 
 
 #include<iostream>
-
+#include"header.h"
 void asciiArtedName()
 {
     using namespace std;
@@ -14,4 +14,6 @@ void asciiArtedName()
     cout<<"    ╚════██║  ╚██╔╝  ██║╚██╔╝██║       ██║   ██╔══██║╚════██║██╔═██╗ ██╔══╝  ██╔══██╗"<<endl;
     cout<<"    ███████║   ██║   ██║ ╚═╝ ██║       ██║   ██║  ██║███████║██║  ██╗███████╗██║  ██║"<<endl;
     cout<<"    ╚══════╝   ╚═╝   ╚═╝     ╚═╝       ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝"<<endl;
+    cout<<endl << "                  ";
+    motivation();
 }
