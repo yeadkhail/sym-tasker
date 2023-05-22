@@ -13,7 +13,7 @@ int TagInsert(void){
     getline(cin, tag);
     cout << "What shall be the importance? (1 for Important and 0 for Not important)" << endl;
     getline(cin, imp);
-    string dot = "^^";
+    string dot = "^";
     int i=0,num1,num2;
     string InsertedTag, Imp, input, part;
     ifstream inputFile(filename);
