@@ -15,5 +15,6 @@ void asciiArtedName()
     cout<<"    ███████║   ██║   ██║ ╚═╝ ██║       ██║   ██║  ██║███████║██║  ██╗███████╗██║  ██║"<<endl;
     cout<<"    ╚══════╝   ╚═╝   ╚═╝     ╚═╝       ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝"<<endl;
     cout<<endl << "                  ";
-    motivation();
+    motivation() ;
+    cout << endl;
 }

@@ -9,8 +9,10 @@
 
 input taskfromstring(string stringdata)
 {
+    string tasknum;
     istringstream iss(stringdata);
     input taskdata;
+    getline(iss,tasknum,'^');
     getline(iss,taskdata.taskname,'^');
     getline(iss,taskdata.taskdetail,'^');
     getline(iss,taskdata.tasktag,'^');

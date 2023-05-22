@@ -11,6 +11,7 @@ void showTable()
     setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
     char *line = NULL;
     size_t len = 0;
+    int FilesForTable(void);
     fileChangerForOutputTable();
     outputTable();
 }

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int History(void)
+int history(void)
 {
     string filename = dotsymfilestring();
     int count = 0, i = 0, att = 0,count2 = 0;
