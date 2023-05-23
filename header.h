@@ -33,4 +33,6 @@ int history(void);
 int FilesForTable(void);
 int fileChangerForOutputTable();
 int finalFileChangerForOutputTable();
+int showExpired(void);
+int findAttachment();
 #endif //_HEADER_H

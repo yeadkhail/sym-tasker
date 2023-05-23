@@ -12,12 +12,13 @@ begin:
         if(dotSymFileChecker())
         {
             cout << endl;
-            showTable();
+            //showTable();
 start:
             string input;
             cout << "Enter your command >> ";
             cin >> input;
             if(input == "insert") insert();
+            else if(input == "edit-task") TaskEdit();
             else if(input == "delete-task") TaskDelete();
             //else if(input == "update") updateTask();
             //else if(input == "show") showTask();
@@ -29,6 +30,8 @@ start:
             else if(input == "insert-tag") TagInsert();
             else if(input == "search-tagwise") TagWise();
             else if(input == "show-attachment") findAttachment();
+            else if(input == "show-expired") showExpired();
+            else if(input == "history") history();
             else if(input == "exit") exit(0);
             else if(input == "clear") system("clear");  //system("cls");
             else cout << "Invalid command" << endl;
@@ -56,6 +59,11 @@ start:
         {
             randomizer();
         }
+        else if(strcmp(argv[1],"--history")==0)
+        {
+            history();
+        }
+
     }
     return 0;
 }
