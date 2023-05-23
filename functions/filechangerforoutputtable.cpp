@@ -5,278 +5,146 @@
 #include <fstream>
 #include <string>
 
-int fileChangerForOutputTable()
-{
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int fileChangerForOutputTable() {
+    ifstream inputFile("data1.txt");
 
-
-    char *lad1 = NULL;
-    size_t len = 0;
-    std::string fileName1 = "d1.txt";
-    std::ifstream file1(fileName1);
-    if (!file1.is_open()) {
-        std::cout << "Unable to open file: " << fileName1 << std::endl;
-        return 1;  // Exit the program with an error code
+    if (!inputFile) {
+        cout << "Failed to open the file." << endl;
+        return 1;
     }
 
-    std::ofstream fout1("data6.txt");
-    if (!fout1.is_open()) {
-        std::cout << "Unable to open output file: data6.txt" << std::endl;
-        file1.close();  // Close the input file before exiting
-        return 1;  // Exit the program with an error code
+    ofstream outputFile("d1.txt");
+
+    if (!outputFile) {
+        cout << "Failed to create the output file." << endl;
+        return 1;
     }
 
-    std::string line;
-    int lineCount = 0;
-
-    while (std::getline(file1, line)) {
-        if (lineCount == 9) {
-
-            break;
-        }
-        int charCount = line.length();
-        lineCount++;
-        if (charCount > 30) {
-            lineCount++;
-            if (fout1.fail()) {
-                std::cout << "Error in writing to file" << std::endl;
-                file1.close();  // Close the input file before exiting
-                fout1.close();  // Close the output file before exiting
-                return 1;  // Exit the program with an error code
-            }
-            for (int i = 0; i < 30; i++) {
-                fout1 << line[i];
-            }
-            fout1 << "||" << std::endl;
-            for (int i = 30; i < line.length(); i++) {
-                fout1 << line[i];
-            }
-            for (int i = line.length(); i < 60; i++) {
-                fout1 << " ";
-            }
-            fout1 << "||" << std::endl;
+    string line;
+    while (getline(inputFile, line)) {
+        if (line.length() > 30) {
+            string firstPart = line.substr(0, 20);
+            string secondPart = line.substr(20);
+            outputFile << firstPart <<'-'<< endl << secondPart<<endl;
         } else {
-            for (int i = 0; i < 30; i++) {
-                if (i < charCount) {
-                    fout1 << line[i];
-                } else {
-                    fout1 << " ";
-                }
+            if(line.length()==1)
+                outputFile << line << " "<<endl;
+            else
+            {
+                outputFile << line<<endl;
             }
-            fout1 << "||" << std::endl;
+        }
+
+    }
+    inputFile.close();
+    outputFile.close();
+
+    ifstream inputFile2("data2.txt");
+
+    if (!inputFile2) {
+        std::cout << "Failed to open the file." << endl;
+        return 1;
+    }
+
+    ofstream outputFile2("d2.txt");
+
+    if (!outputFile2) {
+        cout << "Failed to create the output file." << std::endl;
+        return 1;
+    }
+
+
+    while (getline(inputFile2, line)) {
+        if (line.length() > 30) {
+            string firstPart = line.substr(0, 27);
+            string secondPart = line.substr(27);
+            outputFile2 << firstPart << endl << secondPart <<endl;
+        } else {
+            if(line.length()==1)
+                outputFile2 << line << " "<<endl;
+            else
+            {
+                outputFile2<< line<<endl;
+            }
         }
     }
 
-    if (lineCount < 10) {
-        for (int i = 0; i < 10 - lineCount; i++) {
-            for (int j = 0; j < 30; j++) {
-                fout1 << " ";
-            }
-            fout1 << "||" << std::endl;
-        }
 
 
-        file1.close();
-        fout1.close();
+    inputFile2.close();
+    outputFile2.close();
 
+    ifstream inputFile3("data3.txt");
 
-        std::string fileName2 = "d2.txt";
-        std::ifstream file2(fileName2);
-        if (!file2.is_open()) {
-            std::cout << "Unable to open file: " << fileName2 << std::endl;
-            return 1;  // Exit the program with an error code
-        }
-
-        std::ofstream fout2("data7.txt");
-        if (!fout2.is_open()) {
-            std::cout << "Unable to open output file: data7.txt" << std::endl;
-            file2.close();  // Close the input file before exiting
-            return 1;  // Exit the program with an error code
-        }
-
-        lineCount = 0;
-
-        while (std::getline(file2, line)) {
-            if (lineCount == 9) {
-                break;
-            }
-            int charCount = line.length();
-            lineCount++;
-            if (charCount > 30) {
-                lineCount++;
-                if (fout2.fail()) {
-                    std::cout << "Error in writing to file" << std::endl;
-                    file2.close();  // Close the input file before exiting
-                    fout2.close();  // Close the output file before exiting
-                    return 1;  // Exit the program with an error code
-                }
-                for (int i = 0; i < 30; i++) {
-                    fout2 << line[i];
-                }
-                fout2 << "||" << std::endl;
-                for (int i = 30; i < line.length(); i++) {
-                    fout2 << line[i];
-                }
-                for (int i = line.length(); i < 60; i++) {
-                    fout2 << " ";
-                }
-                fout2 << "||" << std::endl;
-            } else {
-                for (int i = 0; i < 30; i++) {
-                    if (i < charCount) {
-                        fout2 << line[i];
-                    } else {
-                        fout2 << " ";
-                    }
-                }
-                fout2 << "||" << std::endl;
-            }
-        }
-
-        if (lineCount < 10) {
-            for (int i = 0; i < 10 - lineCount; i++) {
-                for (int j = 0; j < 30; j++) {
-                    fout2 << " ";
-                }
-                fout2 << "||" << std::endl;
-            }
-        }
-
-        file2.close();
-        fout2.close();
-
-
-        std::string fileName3 = "d3.txt";
-        std::ifstream file3(fileName3);
-        if (!file3.is_open()) {
-            std::cout << "Unable to open file: " << fileName3 << std::endl;
-            return 1;  // Exit the program with an error code
-        }
-
-        std::ofstream fout3("data8.txt");
-        if (!fout3.is_open()) {
-            std::cout << "Unable to open output file: data8.txt" << std::endl;
-            file3.close();  // Close the input file before exiting
-            return 1;  // Exit the program with an error code
-        }
-
-        lineCount = 0;
-
-        while (std::getline(file3, line)) {
-            if (lineCount == 10) {
-                break;
-            }
-            int charCount = line.length();
-            lineCount++;
-            if (charCount > 30) {
-                lineCount++;
-                if (fout3.fail()) {
-                    std::cout << "Error in writing to file" << std::endl;
-                    file3.close();  // Close the input file before exiting
-                    fout3.close();  // Close the output file before exiting
-                    return 1;  // Exit the program with an error code
-                }
-                for (int i = 0; i < 30; i++) {
-                    fout3 << line[i];
-                }
-                fout3 << "||" << std::endl;
-                for (int i = 30; i < line.length(); i++) {
-                    fout3 << line[i];
-                }
-                for (int i = line.length(); i < 60; i++) {
-                    fout3 << " ";
-                }
-                fout3 << "||" << std::endl;
-            } else {
-                for (int i = 0; i < 30; i++) {
-                    if (i < charCount) {
-                        fout3 << line[i];
-                    } else {
-                        fout3 << " ";
-                    }
-                }
-                fout3 << "||" << std::endl;
-            }
-        }
-
-        if (lineCount < 10) {
-            for (int i = 0; i < 10 - lineCount; i++) {
-                for (int j = 0; j < 30; j++) {
-                    fout3 << " ";
-                }
-                fout3 << "||" << std::endl;
-            }
-        }
-
-        file3.close();
-        fout3.close();
-
-
-        std::string fileName4 = "d4.txt";
-        std::ifstream file4(fileName4);
-        if (!file4.is_open()) {
-            std::cout << "Unable to open file: " << fileName4 << std::endl;
-            return 1;  // Exit the program with an error code
-        }
-
-        std::ofstream fout4("data9.txt");
-        if (!fout4.is_open()) {
-            std::cout << "Unable to open output file: data9.txt" << std::endl;
-            file4.close();  // Close the input file before exiting
-            return 1;  // Exit the program with an error code
-        }
-
-        lineCount = 0;
-
-        while (std::getline(file4, line)) {
-            if (lineCount == 10) {
-                break;
-            }
-            int charCount = line.length();
-            lineCount++;
-            if (charCount > 30) {
-                lineCount++;
-                if (fout4.fail()) {
-                    std::cout << "Error in writing to file" << std::endl;
-                    file4.close();  // Close the input file before exiting
-                    fout4.close();  // Close the output file before exiting
-                    return 1;  // Exit the program with an error code
-                }
-                for (int i = 0; i < 30; i++) {
-                    fout4 << line[i];
-                }
-                fout4 << "||" << std::endl;
-                for (int i = 30; i < line.length(); i++) {
-                    fout4 << line[i];
-                }
-                for (int i = line.length(); i < 60; i++) {
-                    fout4 << " ";
-                }
-                fout4 << "||" << std::endl;
-            } else {
-                for (int i = 0; i < 30; i++) {
-                    if (i < charCount) {
-                        fout4 << line[i];
-                    } else {
-                        fout4 << " ";
-                    }
-                }
-                fout4 << "||" << std::endl;
-            }
-        }
-
-        if (lineCount < 10) {
-            for (int i = 0; i < 10 - lineCount; i++) {
-                for (int j = 0; j < 30; j++) {
-                    fout4 << " ";
-                }
-                fout4 << "||" << std::endl;
-            }
-        }
-
-        file4.close();
-        fout4.close();
-
-        return 0;
+    if (!inputFile3) {
+        cout<< "Failed to open the file." << endl;
+        return 1;
     }
+
+    ofstream outputFile3("d3.txt");
+
+    if (!outputFile3) {
+        cerr << "Failed to create the output file." << endl;
+        return 1;
+    }
+
+
+    while (getline(inputFile3, line)) {
+        if (line.length() > 30) {
+            string firstPart = line.substr(0, 27);
+            string secondPart = line.substr(27);
+            outputFile3 << firstPart << endl << secondPart << " "<<endl;
+        } else {
+            if(line.length()==1)
+                outputFile3 << line << " "<<endl;
+            else
+            {
+                outputFile3<< line<<endl;
+            }
+        }
+    }
+//  outputFile3<<space<<endl;
+//     outputFile3<<space<<endl;
+    inputFile3.close();
+    outputFile3.close();
+
+    ifstream inputFile4("data4.txt");
+
+    if (!inputFile4) {
+        cerr << "Failed to open the file." << endl;
+        return 1;
+    }
+
+    ofstream outputFile4("d4.txt");
+
+    if (!outputFile4) {
+        cerr << "Failed to create the output file." << endl;
+        return 1;
+    }
+
+
+    while (getline(inputFile4, line)) {
+        if (line.length() > 30) {
+            string firstPart = line.substr(0, 27);
+            string secondPart = line.substr(27);
+            outputFile4 << firstPart <<'-'<< endl << secondPart << " "<<endl;
+        } else {
+            if(line.length()==1)
+                outputFile4 << line << " "<<endl;
+            else
+            {
+                outputFile4<< line<<endl;
+            }
+        }
+    }
+//  outputFile4<<space<<endl;
+//     outputFile4<<space<<endl;
+    inputFile4.close();
+    outputFile4.close();
+
     return 0;
 }

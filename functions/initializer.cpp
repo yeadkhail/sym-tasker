@@ -64,7 +64,7 @@ int initializer()
     cout<< "We are now going to initialize your profile!" <<endl;
     system("sleep 2");
     system("clear");
-    dotsym <<"``Detais``"<<endl;
+    dotsym <<"``Details``"<<endl;
     dotsym <<"Name: "<<name<<endl;
     dotsym <<"Phone Number: " << phone_number << endl;
     dotsym << "Email: " << email << endl;
