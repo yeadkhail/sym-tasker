@@ -32,6 +32,7 @@ start:
             else if(input == "show-attachment") findAttachment();
             else if(input == "show-expired") showExpired();
             else if(input == "history") history();
+            else if(input == "show-table") showTable();
             else if(input == "exit") exit(0);
             else if(input == "clear") system("clear");  //system("cls");
             else cout << "Invalid command" << endl;
