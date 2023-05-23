@@ -12,7 +12,7 @@ begin:
         if(dotSymFileChecker())
         {
             cout << endl;
-            //showTable();
+            showTable();
 start:
             string input;
             cout << "Enter your command >> ";

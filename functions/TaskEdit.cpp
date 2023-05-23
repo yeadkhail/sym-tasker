@@ -48,7 +48,7 @@ int TaskEdit(void)
         cin.ignore();
         getline(cin, ReplacementTaskDet);
     }
-    cout << "Do you want to edit the tag of the task" << endl;
+    cout << "Do you want to edit the tag of the task(y/n)" << endl;
     cin >> TagAns;
     if(TagAns == 'y')
     {
@@ -58,7 +58,7 @@ int TaskEdit(void)
         cin.ignore();
         getline(cin, ReplacementTag);
     }
-    cout << "Do you want to edit the date of the task" << endl;
+    cout << "Do you want to edit the date of the task(y/n)" << endl;
     cin >> DateAns;
     if(DateAns == 'y')
     {

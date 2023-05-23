@@ -27,8 +27,8 @@ int fileChangerForOutputTable() {
     string line;
     while (getline(inputFile, line)) {
         if (line.length() > 30) {
-            string firstPart = line.substr(0, 20);
-            string secondPart = line.substr(20);
+            string firstPart = line.substr(0, 29);
+            string secondPart = line.substr(29);
             outputFile << firstPart <<'-'<< endl << secondPart<<endl;
         } else {
             if(line.length()==1)
@@ -60,8 +60,8 @@ int fileChangerForOutputTable() {
 
     while (getline(inputFile2, line)) {
         if (line.length() > 30) {
-            string firstPart = line.substr(0, 27);
-            string secondPart = line.substr(27);
+            string firstPart = line.substr(0, 29);
+            string secondPart = line.substr(29);
             outputFile2 << firstPart << endl << secondPart <<endl;
         } else {
             if(line.length()==1)
@@ -95,9 +95,9 @@ int fileChangerForOutputTable() {
 
     while (getline(inputFile3, line)) {
         if (line.length() > 30) {
-            string firstPart = line.substr(0, 27);
-            string secondPart = line.substr(27);
-            outputFile3 << firstPart << endl << secondPart << " "<<endl;
+            string firstPart = line.substr(0, 29);
+            string secondPart = line.substr(29);
+            outputFile3 << firstPart <<"-"<< endl << secondPart << " "<<endl;
         } else {
             if(line.length()==1)
                 outputFile3 << line << " "<<endl;
@@ -129,8 +129,8 @@ int fileChangerForOutputTable() {
 
     while (getline(inputFile4, line)) {
         if (line.length() > 30) {
-            string firstPart = line.substr(0, 27);
-            string secondPart = line.substr(27);
+            string firstPart = line.substr(0, 29);
+            string secondPart = line.substr(29);
             outputFile4 << firstPart <<'-'<< endl << secondPart << " "<<endl;
         } else {
             if(line.length()==1)
