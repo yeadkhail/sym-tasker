@@ -6,7 +6,7 @@ using namespace std;
 int history(void)
 {
     string filename = dotsymfilestring();
-    int count = 0, i = 0, att = 0,count2 = 0;
+    int count = 0, i = 0,count2 = 0;
     input taskdata;
     ifstream read;
     read.open(filename);
@@ -52,16 +52,13 @@ int history(void)
                 }
                 if(i == 5)
                 {
-                    att = 1;
+                    taskdata.attachment = part;
                 }
                 i++;
             }
 
             count2++;
-            cout << count2 << "/ Name: " << taskdata.taskname << " Details: " << taskdata.taskdetail << " Tag: " << taskdata.tasktag << " Date: " << taskdata.date << endl;
-            if(att){
-                cout << " There is an attachement in this task" << endl;
-            }
+            cout << count2 << "/ Name: " << taskdata.taskname << " Details: " << taskdata.taskdetail << " Tag: " << taskdata.tasktag << " Date: " << taskdata.date << " Attachment: " << taskdata.attachment << endl;
         }
 
         if(input == "``tasks``")
