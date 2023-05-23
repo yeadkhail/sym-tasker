@@ -42,13 +42,13 @@ int finalFileChangerForOutputTable()
         string concat = "";
 
 
-        for (int i = 0; i < line1.length() - 1; i++)
+        for (int i = 0; i < line1.length() ; i++)
         {
             concat += line1[i];
         }
         concat += " ~";
 
-        for (int i = 0; i < line2.length() - 1; i++)
+        for (int i = 0; i < line2.length() ; i++)
         {
             concat += line2[i];
         }
@@ -62,13 +62,13 @@ int finalFileChangerForOutputTable()
         string concat = "";
 
 
-        for (int i = 0; i < line1.length() - 1; i++)
+        for (int i = 0; i < line1.length() ; i++)
         {
             concat += line1[i];
         }
         concat += " ~";
 
-        for (int i = 0; i < line1.length() - 1; i++)
+        for (int i = 0; i < line1.length() ; i++)
         {
             concat += " ";
         }
@@ -81,12 +81,12 @@ int finalFileChangerForOutputTable()
     {
 
         string concat = "";
-        for (int i = 0; i < line2.length() - 1; i++)
+        for (int i = 0; i < line2.length() ; i++)
         {
             concat += " ";
         }
         concat += " ~";
-        for (int i = 0; i < line2.length() - 1; i++)
+        for (int i = 0; i < line2.length() ; i++)
         {
             concat += line2[i];
         }
@@ -142,12 +142,12 @@ int finalFileChangerForOutputTable()
         int length1 = line3.length();
         string concat = "";
 
-        for (int i = 0; i < line3.length() - 1; i++)
+        for (int i = 0; i < line3.length() ; i++)
         {
             concat += line3[i];
         }
         concat += '~';
-        for (int i = 0; i < line3.length() - 1; i++)
+        for (int i = 0; i < line3.length() ; i++)
         {
             concat += " ";
         }
