@@ -24,11 +24,8 @@ int fileChangerForOutputTable();
 int outputTable();
 void showTable();
 void TaskDelete(void);
-int TaskEdit(void);
-int showAttachment(input taskdata);
-bool isUrgent(input taskdata);
 bool isImportant(input taskdata);
+bool isUrgent(input taskdata);
 bool isExpired(input taskdata);
-int history(void);
-int FilesForTable(void);
+int findAttachment();
 #endif //_HEADER_H

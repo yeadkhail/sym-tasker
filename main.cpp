@@ -28,8 +28,7 @@ start:
             else if(input =="delete-tag") TagDelete();
             else if(input == "insert-tag") TagInsert();
             else if(input == "search-tagwise") TagWise();
-            else if(input == "update-task") TaskEdit();
-            else if (input == "history") history();
+            else if(input == "show-attachment") findAttachment();
             else if(input == "exit") exit(0);
             else if(input == "clear") system("clear");  //system("cls");
             else cout << "Invalid command" << endl;

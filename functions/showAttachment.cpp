@@ -31,3 +31,56 @@ int showAttachment(input taskdata)
     }
     return 0;
 }
+int findAttachment()
+{
+    input taskdata;
+    setvbuf(stdin, NULL, _IONBF, 0);  // Disable input buffering
+    char *line1 = NULL;
+    size_t len = 0;
+    int count = 0, found = 0;
+    string filename = dotsymfilestring(), task;
+    ifstream read;
+    read.open(filename);
+    if(!read)
+    {
+        cout << "Failed to open file" << filename << endl;
+        return 0;
+    }
+    cout << "What task do you want to see the attachment of?" <<endl;
+    getline(cin, task);
+    string input;
+    string part;
+    while(!read.eof())
+    {
+        getline(read, input);
+        if(found)
+            break;
+        if(count)
+        {
+            istringstream iss(input);
+            while(getline(iss, part, '^'))
+            {
+                if(part == task)
+                {
+                    taskdata.taskname = part;
+                    getline(iss, part, '^');
+                    taskdata.taskdetail = part;
+                    getline(iss, part, '^');
+                    taskdata.tasktag = part;
+                    getline(iss, part, '^');
+                    taskdata.date = part;
+                    getline(iss, part, '^');
+                    taskdata.attachment = part;
+                    count = 0;
+                    found = 1;
+                    break;
+                }
+            }
+        }
+        if(input == "``tasks``")
+            count = 1;
+
+    }
+    showAttachment(taskdata);
+    return 0;
+}

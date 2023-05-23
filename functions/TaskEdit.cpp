@@ -158,5 +158,5 @@ int TaskEdit(void)
     else
         cout << "Failed to find the tag" << endl;
 
-
+    return 1;
 }
