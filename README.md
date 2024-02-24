@@ -1,5 +1,8 @@
-# sym-tasker
+# sym-tasker(Archived)
 A cli based task listing and management application where task will be shown in a table according to the Covey's Time Management Quadrant.
+This is an archived project. A new oop implementation of this project is there with more stability and encryption support. Visit the new repo using this [link](https://github.com/yeadkhail/symple_tasker).
+
+
 ## Features
 * Task listing.
 * Task viewing.
